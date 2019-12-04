@@ -1,4 +1,14 @@
 package ua.training.model;
 
-public class Vegetable {
+class Vegetable extends Ingredient {
+    private boolean isClean;
+
+    Vegetable(double mass, double kCaloriesIn1KG) {
+        super(mass, kCaloriesIn1KG);
+    }
+
+    boolean checkIfIsClean() {
+        return isClean;
+    }
+
 }
