@@ -3,8 +3,8 @@ package ua.training.model;
 class Vegetable extends Ingredient {
     private boolean isClean;
 
-    Vegetable(double mass, double kCaloriesIn1KG) {
-        super(mass, kCaloriesIn1KG);
+    Vegetable(String name, double mass, double kCaloriesIn1KG) {
+        super(name, mass, kCaloriesIn1KG);
     }
 
     void checkAndClean() {

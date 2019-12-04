@@ -10,7 +10,7 @@ public class IngredientTest {
 
     @Before
     public void createIngredient() {
-        ingredient = new Ingredient(0.1, 1000);
+        ingredient = new Ingredient("Tomato", 0.1, 1000);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class IngredientTest {
 
     @Test
     public void testCompareToIfNotEquals() {
-        Ingredient ingredient2 = new Ingredient(0.3, 1000.1);
+        Ingredient ingredient2 = new Ingredient("Carrot", 0.3, 1000.1);
         int result = ingredient.compareTo(ingredient2);
 
         Assert.assertEquals(-1, result);
@@ -39,7 +39,7 @@ public class IngredientTest {
 
     @Test
     public void testCompareToIfEquals() {
-        Ingredient ingredient2 = new Ingredient(0.04, 1000);
+        Ingredient ingredient2 = new Ingredient("Carrot", 0.04, 1000);
         int result = ingredient.compareTo(ingredient2);
 
         Assert.assertEquals(0, result);

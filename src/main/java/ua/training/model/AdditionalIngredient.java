@@ -3,8 +3,9 @@ package ua.training.model;
 public class AdditionalIngredient extends Ingredient {
     private String type;
 
-    AdditionalIngredient(double mass, double kCaloriesIn1KG, String type) {
-        super(mass, kCaloriesIn1KG);
+    AdditionalIngredient(String name, double mass, double kCaloriesIn1KG,
+                         String type) {
+        super(name, mass, kCaloriesIn1KG);
         this.type = type;
     }
 

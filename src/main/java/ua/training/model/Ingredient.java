@@ -1,11 +1,12 @@
 package ua.training.model;
 
 class Ingredient implements Comparable<Ingredient> {
+    private String name;
     private double mass;
     private double kCaloriesIn1KG;
     private double kCalories;
 
-    Ingredient(double mass, double kCaloriesIn1KG) {
+    Ingredient(String name, double mass, double kCaloriesIn1KG) {
         this.mass = mass;
         this.kCaloriesIn1KG = kCaloriesIn1KG;
         kCalories = calculateCaloriesInMass(mass, kCaloriesIn1KG);
@@ -13,6 +14,10 @@ class Ingredient implements Comparable<Ingredient> {
 
     double calculateCaloriesInMass(double mass, double kCaloriesIn1KG) {
         return mass * kCaloriesIn1KG;
+    }
+
+    String getName() {
+        return name;
     }
 
     double getMass() {
