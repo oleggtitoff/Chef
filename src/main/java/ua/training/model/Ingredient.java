@@ -2,10 +2,12 @@ package ua.training.model;
 
 class Ingredient {
     private double mass;
+    private double kCaloriesIn1KG;
     private double kCalories;
 
     Ingredient(double mass, double kCaloriesIn1KG) {
         this.mass = mass;
+        this.kCaloriesIn1KG = kCaloriesIn1KG;
         kCalories = calculateCaloriesInMass(mass, kCaloriesIn1KG);
     }
 
@@ -15,6 +17,10 @@ class Ingredient {
 
     double getMass() {
         return mass;
+    }
+
+    double getKCaloriesIn1KG() {
+        return kCaloriesIn1KG;
     }
 
     double getKCalories() {
