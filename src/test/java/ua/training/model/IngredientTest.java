@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class IngredientTest {
     private Ingredient ingredient;
-    private final double DOUBLES_COMPARISON_DELTA = 0.0000000000001;
 
     @Before
     public void createIngredient() {
@@ -18,7 +17,8 @@ public class IngredientTest {
         double caloriesInThisMass
                 = ingredient.calculateCaloriesInMass(0.1, 1000);
 
-        Assert.assertEquals(100.0, caloriesInThisMass, DOUBLES_COMPARISON_DELTA);
+        Assert.assertEquals(100.0, caloriesInThisMass,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
     }
 
     @Test
@@ -26,7 +26,8 @@ public class IngredientTest {
         ingredient.addMore(0.15);
         double mass = ingredient.getMass();
 
-        Assert.assertEquals(0.25, mass, DOUBLES_COMPARISON_DELTA);
+        Assert.assertEquals(0.25, mass,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
     }
 
     @Test

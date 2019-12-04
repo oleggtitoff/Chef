@@ -8,9 +8,6 @@ import java.util.List;
 
 public class SaladTest {
     private Salad salad;
-    private final double DOUBLES_COMPARISON_DELTA = 0.0000000000001;
-    private final double RANGE_MIN_VALUE = 400;
-    private final double RANGE_MAX_VLAUE = 800;
 
     @Before
     public void createSalad() {
@@ -26,21 +23,23 @@ public class SaladTest {
     public void testGetTotalKCalories() {
         double totalKCalories = salad.getTotalKCalories();
 
-        Assert.assertEquals(527.5, totalKCalories, DOUBLES_COMPARISON_DELTA);
+        Assert.assertEquals(527.5, totalKCalories,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
     }
 
     @Test
     public void testGetIngredientsInKCaloriesRange() {
         List<Ingredient> ingredientsInRange
-                = salad.getIngredientsInKCaloriesRange(RANGE_MIN_VALUE,
-                RANGE_MAX_VLAUE);
+                = salad.getIngredientsInKCaloriesRange(400, 800);
         int listSize = ingredientsInRange.size();
         double element1KCalories = ingredientsInRange.get(0).getKCaloriesIn1KG();
         double element2KCalories = ingredientsInRange.get(1).getKCaloriesIn1KG();
 
         Assert.assertEquals(2, listSize);
-        Assert.assertEquals(500, element1KCalories, DOUBLES_COMPARISON_DELTA);
-        Assert.assertEquals(800, element2KCalories, DOUBLES_COMPARISON_DELTA);
+        Assert.assertEquals(500, element1KCalories,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
+        Assert.assertEquals(800, element2KCalories,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
     }
 
 }
