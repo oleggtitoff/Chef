@@ -33,6 +33,27 @@ public class Salad {
         return totalKCalories;
     }
 
+    public List<Ingredient> getIngredientsInKCaloriesRange(double rangeMinValue,
+                                                           double rangeMaxValue) {
+        List<Ingredient> ingredientsInRange = new ArrayList<>();
+
+        for (Ingredient ingredient : ingredients) {
+            double calories = ingredient.getKCaloriesIn1KG();
+
+            if (checkIfDoubleIsInRange(calories, rangeMinValue, rangeMaxValue)) {
+                ingredientsInRange.add(ingredient);
+            }
+        }
+        return ingredientsInRange;
+    }
+
+    private boolean checkIfDoubleIsInRange(double value, double rangeMinValue,
+                                           double rangeMaxValue) {
+        return value > rangeMinValue && value < rangeMaxValue
+                || Double.compare(rangeMinValue, value) == 0
+                || Double.compare(rangeMaxValue, value) == 0;
+    }
+
     public void sort() {
         Collections.sort(ingredients);
     }
