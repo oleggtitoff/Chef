@@ -29,4 +29,20 @@ public class IngredientTest {
         Assert.assertEquals(0.25, mass, doublesComparisonDelta);
     }
 
+    @Test
+    public void testCompareToIfNotEquals() {
+        Ingredient ingredient2 = new Ingredient(0.3, 1000.1);
+        int result = ingredient.compareTo(ingredient2);
+
+        Assert.assertEquals(-1, result);
+    }
+
+    @Test
+    public void testCompareToIfEquals() {
+        Ingredient ingredient2 = new Ingredient(0.04, 1000);
+        int result = ingredient.compareTo(ingredient2);
+
+        Assert.assertEquals(0, result);
+    }
+
 }

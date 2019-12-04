@@ -1,6 +1,6 @@
 package ua.training.model;
 
-class Ingredient {
+class Ingredient implements Comparable<Ingredient> {
     private double mass;
     private double kCaloriesIn1KG;
     private double kCalories;
@@ -29,6 +29,11 @@ class Ingredient {
 
     void addMore(double mass) {
         this.mass += mass;
+    }
+
+    @Override
+    public int compareTo(Ingredient ingredient) {
+        return Double.compare(kCaloriesIn1KG, ingredient.kCaloriesIn1KG);
     }
 
 }
