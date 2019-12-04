@@ -21,4 +21,8 @@ class Ingredient {
         return kCalories;
     }
 
+    void addMore(double mass) {
+        this.mass += mass;
+    }
+
 }

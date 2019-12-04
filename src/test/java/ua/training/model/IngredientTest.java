@@ -21,4 +21,12 @@ public class IngredientTest {
         Assert.assertEquals(100.0, caloriesInThisMass, doublesComparisonDelta);
     }
 
+    @Test
+    public void testAddMore() {
+        ingredient.addMore(0.15);
+        double mass = ingredient.getMass();
+
+        Assert.assertEquals(0.25, mass, doublesComparisonDelta);
+    }
+
 }
