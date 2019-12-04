@@ -10,7 +10,7 @@ public class IngredientTest {
 
     @Before
     public void createIngredient() {
-        ingredient = new Ingredient();
+        ingredient = new Ingredient(0.1, 1000);
     }
 
     @Test
@@ -20,4 +20,5 @@ public class IngredientTest {
 
         Assert.assertEquals(100.0, caloriesInThisMass, doublesComparisonDelta);
     }
+
 }
