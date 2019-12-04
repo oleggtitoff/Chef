@@ -7,8 +7,18 @@ class Vegetable extends Ingredient {
         super(mass, kCaloriesIn1KG);
     }
 
+    void checkAndClean() {
+        if (!checkIfIsClean()) {
+            clean();
+        }
+    }
+
     boolean checkIfIsClean() {
         return isClean;
+    }
+
+    void clean() {
+        isClean = true;
     }
 
 }

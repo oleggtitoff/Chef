@@ -15,7 +15,24 @@ public class VegetableTest {
     @Test
     public void testCheckIfIsClean() {
         boolean isClean = vegetable.checkIfIsClean();
+
         Assert.assertFalse(isClean);
+    }
+
+    @Test
+    public void testClean() {
+        vegetable.clean();
+        boolean isClean = vegetable.checkIfIsClean();
+
+        Assert.assertTrue(isClean);
+    }
+
+    @Test
+    public void testCheckAndClean() {
+        vegetable.checkAndClean();
+        boolean isClean = vegetable.checkIfIsClean();
+
+        Assert.assertTrue(isClean);
     }
 
 }
