@@ -1,6 +1,7 @@
 package ua.training.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Salad {
@@ -30,6 +31,10 @@ public class Salad {
 
     public double getTotalKCalories() {
         return totalKCalories;
+    }
+
+    public void sort() {
+        Collections.sort(ingredients);
     }
 
 }
