@@ -4,6 +4,9 @@ import ua.training.model.Salad;
 import ua.training.view.StringsContainer;
 import ua.training.view.View;
 
+import javax.swing.text.StringContent;
+import java.text.StringCharacterIterator;
+
 import static ua.training.view.View.bundle;
 
 public class Controller {
@@ -18,7 +21,28 @@ public class Controller {
     }
 
     public void processEnumInput() {
+        for (int i = 0; i < 4; i++) {
+            salad.addVegetable(Input.values()[i].getName(),
+                    Input.values()[i].getMass(),
+                    Input.values()[i].getkCaloriesIn1KG());
+        }
 
+        for (int i = 4; i < 6; i++) {
+            salad.addAdditionalIngredient(Input.values()[i].getName(),
+                    Input.values()[i].getMass(),
+                    Input.values()[i].getkCaloriesIn1KG(),
+                    Input.values()[i].getType());
+        }
+
+        salad.sort();
+        view.printBundleLine(StringsContainer.RANGE_MESSAGE);
+        view.printLine(salad.getIngredientsInKCaloriesRangeToString(190, 400));
+
+        view.printBundleLine(StringsContainer.TOTAL_CALORIES_MESSAGE);
+        view.printLine(Double.toString(salad.getTotalKCalories()));
+
+        view.printBundleLine(StringsContainer.INGREDIENTS_MESSAGE);
+        view.printLine(salad.toString());
     }
 
     public void processUser() {

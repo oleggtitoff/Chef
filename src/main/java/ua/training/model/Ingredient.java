@@ -11,6 +11,7 @@ class Ingredient implements Comparable<Ingredient> {
     private double kCalories;
 
     Ingredient(String name, double mass, double kCaloriesIn1KG) {
+        this.name = name;
         this.mass = mass;
         this.kCaloriesIn1KG = kCaloriesIn1KG;
         kCalories = calculateCaloriesInMass(mass, kCaloriesIn1KG);
@@ -51,6 +52,10 @@ class Ingredient implements Comparable<Ingredient> {
                 + bundle.getString(StringsContainer.NAME_WORD)
                 + StringsContainer.SPACE_SIGN + StringsContainer.EQUAL_SIGN
                 + StringsContainer.SPACE_SIGN + name
+                + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
+                + bundle.getString(StringsContainer.MASS_WORD)
+                + StringsContainer.SPACE_SIGN + StringsContainer.EQUAL_SIGN
+                + StringsContainer.SPACE_SIGN + mass
                 + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
                 + bundle.getString(StringsContainer.K_CALORIES_IN_1_KG_WORD)
                 + StringsContainer.SPACE_SIGN + StringsContainer.EQUAL_SIGN

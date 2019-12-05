@@ -16,6 +16,7 @@ public interface StringsContainer {
     String VEGETABLE_WORD = "output.vegetable.word";
     String ADDITIONAL_INGREDIENT_WORD = "output.additional.ingredient.word";
     String NAME_WORD = "output.name.word";
+    String MASS_WORD = "output.mass.word";
     String K_CALORIES_WORD = "output.kcalories.word";
     String K_CALORIES_IN_1_KG_WORD = "output.kcalories.in1kg.word";
     String TYPE_WORD = "output.type.word";

@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         Controller controller = new Controller(new Salad(), new View());
 
-        controller.processEnumInput();
-        //controller.processUser();
+        //controller.processEnumInput();
+        controller.processUser();
     }
 
 }
