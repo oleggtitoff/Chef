@@ -6,6 +6,7 @@ import static ua.training.view.View.bundle;
 
 /**
  * This class represents ingredient of salad.
+ *
  * @author Oleh Titov
  * @version 1.0
  */
@@ -17,8 +18,9 @@ class Ingredient implements Comparable<Ingredient> {
 
     /**
      * Constructor initializes class fields
-     * @param name represents name of Ingredient
-     * @param mass is decimal value in kilograms
+     *
+     * @param name           represents name of Ingredient
+     * @param mass           is decimal value in kilograms
      * @param kCaloriesIn1KG is decimal value that represents how much
      *                       kilocalories are in one kg of this Ingredient
      */
@@ -31,7 +33,8 @@ class Ingredient implements Comparable<Ingredient> {
 
     /**
      * Method calculates calories for current Ingredients mass
-     * @param mass of Ingredient in kilograms
+     *
+     * @param mass           of Ingredient in kilograms
      * @param kCaloriesIn1KG represents amount of kilocalories in 1 kg of mass
      * @return the value corresponding to current Ingredient mass
      */
@@ -41,6 +44,7 @@ class Ingredient implements Comparable<Ingredient> {
 
     /**
      * Getter
+     *
      * @return name of Ingredient as String
      */
     String getName() {
@@ -49,6 +53,7 @@ class Ingredient implements Comparable<Ingredient> {
 
     /**
      * Getter
+     *
      * @return mass of Ingredient as double value in kilograms
      */
     double getMass() {
@@ -57,6 +62,7 @@ class Ingredient implements Comparable<Ingredient> {
 
     /**
      * Getter
+     *
      * @return double value - amount of kilocalories in one kilo of Ingredient
      */
     double getKCaloriesIn1KG() {
@@ -65,6 +71,7 @@ class Ingredient implements Comparable<Ingredient> {
 
     /**
      * Getter
+     *
      * @return double value - amount of kilocalories in current mass of Ingredient
      */
     double getKCalories() {
@@ -74,6 +81,7 @@ class Ingredient implements Comparable<Ingredient> {
     /**
      * Method adds more mass to Ingredient and recalculates current amount of
      * kilocalories.
+     *
      * @param mass to be added to Ingredient
      */
     void addMore(double mass) {
@@ -85,10 +93,11 @@ class Ingredient implements Comparable<Ingredient> {
      * Method compares current Ingredient with another by amount of kilocalories
      * in one kilo of Ingredient. This method allows to use sort() method in
      * order to sort a list of Ingredient objects.
+     *
      * @param ingredient is another object to compare
      * @return {@code -1} if this (current) object is smaller
-     *         {@code  1} if this object is bigger
-     *         {@code  0} if objects are equal
+     * {@code  1} if this object is bigger
+     * {@code  0} if objects are equal
      */
     @Override
     public int compareTo(Ingredient ingredient) {
@@ -97,6 +106,7 @@ class Ingredient implements Comparable<Ingredient> {
 
     /**
      * Method is intended to
+     *
      * @return the value of the Ingredient fields in String representation
      */
     @Override

@@ -70,7 +70,7 @@ public class Salad {
     }
 
     List<Ingredient> getIngredientsInKCaloriesRange(double rangeMinValue,
-                                                           double rangeMaxValue) {
+                                                    double rangeMaxValue) {
         List<Ingredient> ingredientsInRange = new ArrayList<>();
 
         for (Ingredient ingredient : ingredients) {
