@@ -13,7 +13,8 @@ public class Salad {
     private double totalKCalories;
 
     public void addVegetable(String name, double mass, double kCaloriesIn1KG) {
-        Ingredient vegetable = new Vegetable(name, mass, kCaloriesIn1KG);
+        Vegetable vegetable = new Vegetable(name, mass, kCaloriesIn1KG);
+        vegetable.checkAndClean();
         addIngredient(vegetable);
     }
 
