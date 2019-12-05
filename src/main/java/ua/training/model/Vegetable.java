@@ -1,5 +1,7 @@
 package ua.training.model;
 
+import ua.training.view.StringsContainer;
+
 class Vegetable extends Ingredient {
     private boolean isClean;
 
@@ -19,6 +21,13 @@ class Vegetable extends Ingredient {
 
     void clean() {
         isClean = true;
+    }
+
+    @Override
+    public String toString() {
+        return StringsContainer.VEGETABLE_WORD
+                + StringsContainer.SPACE_SIGN + super.toString()
+                + StringsContainer.CLOSE_CURLY_BRACE;
     }
 
 }

@@ -1,5 +1,7 @@
 package ua.training.model;
 
+import ua.training.view.StringsContainer;
+
 class Ingredient implements Comparable<Ingredient> {
     private String name;
     private double mass;
@@ -39,6 +41,21 @@ class Ingredient implements Comparable<Ingredient> {
     @Override
     public int compareTo(Ingredient ingredient) {
         return Double.compare(kCaloriesIn1KG, ingredient.kCaloriesIn1KG);
+    }
+
+    @Override
+    public String toString() {
+        return StringsContainer.OPEN_CURLY_BRACE + StringsContainer.NAME_WORD
+                + StringsContainer.SPACE_SIGN + StringsContainer.EQUAL_SIGN
+                + StringsContainer.SPACE_SIGN + name
+                + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
+                + StringsContainer.K_CALORIES_IN_1_KG_WORD
+                + StringsContainer.SPACE_SIGN + StringsContainer.EQUAL_SIGN
+                + StringsContainer.SPACE_SIGN + kCaloriesIn1KG
+                + StringsContainer.COMMA_SIGN + StringsContainer.SPACE_SIGN
+                + StringsContainer.K_CALORIES_WORD + StringsContainer.SPACE_SIGN
+                + StringsContainer.EQUAL_SIGN + StringsContainer.SPACE_SIGN
+                + kCalories;
     }
 
 }

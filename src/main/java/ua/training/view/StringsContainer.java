@@ -2,6 +2,16 @@ package ua.training.view;
 
 public interface StringsContainer {
     String SPACE_SIGN = " ";
+    String COMMA_SIGN = ",";
+    String EQUAL_SIGN = "=";
+    String OPEN_CURLY_BRACE = "{";
+    String CLOSE_CURLY_BRACE = "}";
+    String VEGETABLE_WORD = "Vegetable";
+    String ADDITIONAL_INGREDIENT_WORD = "Additional Ingredient";
+    String NAME_WORD = "Name";
+    String K_CALORIES_WORD = "Kilocalories";
+    String K_CALORIES_IN_1_KG_WORD = "Kilocalories in 1 kg";
+    String TYPE_WORD = "Type";
 
     String WRONG_INPUT_MESSAGE = "input.wrong.message";
     String INPUT_INGREDIENT_QUESTION = "input.ingredient.question";
