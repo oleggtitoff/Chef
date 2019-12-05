@@ -17,6 +17,10 @@ public class Controller {
         this.utilityController = new UtilityController(view);
     }
 
+    public void processEnumInput() {
+
+    }
+
     public void processUser() {
         inputCycle();
         askIfAndSort();
