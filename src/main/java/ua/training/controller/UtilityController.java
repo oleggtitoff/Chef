@@ -81,7 +81,7 @@ class UtilityController {
             view.printWrongInputAndBundleLine(message);
             scanner.nextLine();
         }
-        return Double.parseDouble(scanner.nextLine());
+        return scanner.nextDouble();
     }
 
     boolean getAndCheckUserAnswer(String message, String potentialAnswer,

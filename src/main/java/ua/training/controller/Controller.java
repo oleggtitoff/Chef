@@ -4,9 +4,6 @@ import ua.training.model.Salad;
 import ua.training.view.StringsContainer;
 import ua.training.view.View;
 
-import javax.swing.text.StringContent;
-import java.text.StringCharacterIterator;
-
 import static ua.training.view.View.bundle;
 
 public class Controller {
@@ -83,6 +80,7 @@ public class Controller {
 
         if (isVegetable) {
             salad.addVegetable(name, mass, kCaloriesIn1KG);
+            view.printBundleLine(StringsContainer.INGREDIENT_ADDED_MESSAGE);
             return;
         }
         type = inputType();

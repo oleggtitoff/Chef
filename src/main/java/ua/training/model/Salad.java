@@ -25,8 +25,23 @@ public class Salad {
     }
 
     private void addIngredient(Ingredient ingredient) {
+        Ingredient oldIngredient = getIngredientIfItIsAddedYet(ingredient);
+
+        if (oldIngredient == null) {
+            ingredients.add(ingredient);
+        } else {
+            oldIngredient.addMore(ingredient.getMass());
+        }
         addKCaloriesToTotal(ingredient);
-        ingredients.add(ingredient);
+    }
+
+    private Ingredient getIngredientIfItIsAddedYet(Ingredient newIngredient) {
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.getName().equals(newIngredient.getName())) {
+                return ingredient;
+            }
+        }
+        return null;
     }
 
     private void addKCaloriesToTotal(Ingredient ingredient) {
