@@ -7,6 +7,9 @@ public interface StringsContainer {
     String OPEN_CURLY_BRACE = "{";
     String CLOSE_CURLY_BRACE = "}";
 
+    String USER_YES_ANSWER = "input.user.yes.answer";
+    String USER_VEGETABLE_ANSWER = "input.user.vegetable.answer";
+
     String VEGETABLE_WORD = "output.vegetable.word";
     String ADDITIONAL_INGREDIENT_WORD = "output.additional.ingredient.word";
     String NAME_WORD = "output.name.word";

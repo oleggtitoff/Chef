@@ -34,6 +34,17 @@ public class UtilityController {
         return scanner.nextDouble();
     }
 
+    boolean getAndCheckUserAnswer(String message, String potentialAnswer,
+                                  String regex) {
+        String inputString = inputStringWithScannerByRegex(message, regex);
+
+        return checkUserAnswer(potentialAnswer, inputString);
+    }
+
+    private boolean checkUserAnswer(String potentialAnswer, String answer) {
+        return potentialAnswer.equals(answer);
+    }
+
     String inputStringWithScannerByRegex(String message, String regex) {
         String inputString;
 
