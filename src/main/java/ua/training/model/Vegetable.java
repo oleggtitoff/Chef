@@ -2,6 +2,8 @@ package ua.training.model;
 
 import ua.training.view.StringsContainer;
 
+import static ua.training.view.View.bundle;
+
 class Vegetable extends Ingredient {
     private boolean isClean;
 
@@ -25,7 +27,7 @@ class Vegetable extends Ingredient {
 
     @Override
     public String toString() {
-        return StringsContainer.VEGETABLE_WORD
+        return bundle.getString(StringsContainer.VEGETABLE_WORD)
                 + StringsContainer.SPACE_SIGN + super.toString()
                 + StringsContainer.CLOSE_CURLY_BRACE;
     }
