@@ -37,7 +37,23 @@ public class Salad {
         return totalKCalories;
     }
 
-    public List<Ingredient> getIngredientsInKCaloriesRange(double rangeMinValue,
+    public String getIngredientsInKCaloriesRangeToString(double rangeMinValue,
+                                                         double rangeMaxValue) {
+        StringBuilder resultString = new StringBuilder();
+        List<Ingredient> ingredientsInRange
+                = getIngredientsInKCaloriesRange(rangeMinValue, rangeMaxValue);
+
+        buildInKCaloriesRangeString(resultString, ingredientsInRange);
+        return resultString.toString();
+    }
+
+    private void buildInKCaloriesRangeString(StringBuilder resultString, List<Ingredient> ingredientsInRange) {
+        resultString.append(StringsContainer.OPEN_CURLY_BRACE);
+        appendAllIngredientsToString(resultString, ingredientsInRange);
+        resultString.append(StringsContainer.CLOSE_CURLY_BRACE);
+    }
+
+    List<Ingredient> getIngredientsInKCaloriesRange(double rangeMinValue,
                                                            double rangeMaxValue) {
         List<Ingredient> ingredientsInRange = new ArrayList<>();
 
@@ -72,7 +88,7 @@ public class Salad {
 
     private void buildSaladString(StringBuilder resultString) {
         appendSaladWordAndCurlyBraceToString(resultString);
-        appendAllIngredientsToString(resultString);
+        appendAllIngredientsToString(resultString, ingredients);
         resultString.append(StringsContainer.CLOSE_CURLY_BRACE);
     }
 
@@ -82,7 +98,8 @@ public class Salad {
         resultString.append(StringsContainer.OPEN_CURLY_BRACE);
     }
 
-    private void appendAllIngredientsToString(StringBuilder resultString) {
+    private void appendAllIngredientsToString(StringBuilder resultString,
+                                              List<Ingredient> ingredients) {
         for (Ingredient ingredient : ingredients) {
             resultString.append(ingredient.toString());
             resultString.append(System.lineSeparator());

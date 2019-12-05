@@ -6,7 +6,7 @@ import ua.training.view.View;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class UtilityController {
+class UtilityController {
     private View view;
     private Scanner scanner;
 
@@ -15,10 +15,60 @@ public class UtilityController {
         scanner = new Scanner(System.in);
     }
 
+    String getYesOrNoRegexLocal() {
+        return getRegexLocal(RegexContainer.YES_NO_REGEX_ENG,
+                RegexContainer.YES_NO_REGEX_UKR);
+    }
+
+    String getVegetableOrNotRegexLocal() {
+        return getRegexLocal(
+                RegexContainer.VEGETABLE_OR_ADDITIONAL_INGREDIENT_REGEX_ENG,
+                RegexContainer.VEGETABLE_OR_ADDITIONAL_INGREDIENT_REGEX_UKR);
+    }
+
+    String getNameRegexLocal() {
+        return getRegexLocal(RegexContainer.NAME_REGEX_ENG,
+                RegexContainer.NAME_REGEX_UKR);
+    }
+
+    private String getRegexLocal(String eng, String ukr) {
+        return (String.valueOf(View.bundle.getLocale()).equals("en")) ? eng : ukr;
+    }
+
+    String getRegexFromTypesEnum() {
+        StringBuilder regex = new StringBuilder();
+
+        buildTypesRegexString(regex);
+        return regex.toString();
+    }
+
+    private void buildTypesRegexString(StringBuilder regex) {
+        regex.append(StringsContainer.CARET_SIGN);
+        appendTypesWithBarSymbolToString(regex);
+        regex.setLength(regex.length() - 1);
+        regex.append(StringsContainer.DOLLAR_SIGN);
+    }
+
+    private void appendTypesWithBarSymbolToString(StringBuilder regex) {
+        for (Types type : Types.values()) {
+            regex.append(type);
+            regex.append(StringsContainer.VERTICAL_BAR_SYMBOL);
+        }
+    }
+
+    double inputMaxRangeValueWithScanner(double minValue) {
+        return inputDoubleNotLessThanSomeValueWithScanner(StringsContainer.RANGE_MAX_PROMPT,
+                minValue);
+    }
+
     double inputNotNegativeDoubleWithScanner(String message) {
+        return inputDoubleNotLessThanSomeValueWithScanner(message, 0);
+    }
+
+    private double inputDoubleNotLessThanSomeValueWithScanner(String message, double threshold) {
         double inputValue = inputDoubleWithScanner(message);
 
-        while (inputValue < 0) {
+        while (inputValue < threshold) {
             view.printWrongInputMessage();
             inputValue = inputDoubleWithScanner(message);
         }
@@ -29,9 +79,9 @@ public class UtilityController {
         view.printBundleLine(message);
         while (!scanner.hasNextDouble()) {
             view.printWrongInputAndBundleLine(message);
-            scanner.next();
+            scanner.nextLine();
         }
-        return scanner.nextDouble();
+        return Double.parseDouble(scanner.nextLine());
     }
 
     boolean getAndCheckUserAnswer(String message, String potentialAnswer,

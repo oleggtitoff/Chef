@@ -6,6 +6,9 @@ public interface StringsContainer {
     String EQUAL_SIGN = "=";
     String OPEN_CURLY_BRACE = "{";
     String CLOSE_CURLY_BRACE = "}";
+    String CARET_SIGN = "^";
+    String VERTICAL_BAR_SYMBOL = "|";
+    String DOLLAR_SIGN = "$";
 
     String USER_YES_ANSWER = "input.user.yes.answer";
     String USER_VEGETABLE_ANSWER = "input.user.vegetable.answer";
