@@ -12,6 +12,15 @@ public class View {
     public static final ResourceBundle bundle = ResourceBundle.getBundle(
             MESSAGES_BUNDLE_NAME, locale);
 
+    public void printWrongInputAndBundleLine(String message) {
+        printWrongInputMessage();
+        printBundleLine(message);
+    }
+
+    public void printWrongInputMessage() {
+        printBundleLine(StringsContainer.WRONG_INPUT_MESSAGE);
+    }
+
     public void printBundleLine(String message) {
         printLine(bundle.getString(message));
     }

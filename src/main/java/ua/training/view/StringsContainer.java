@@ -6,6 +6,7 @@ public interface StringsContainer {
     String EQUAL_SIGN = "=";
     String OPEN_CURLY_BRACE = "{";
     String CLOSE_CURLY_BRACE = "}";
+
     String VEGETABLE_WORD = "output.vegetable.word";
     String ADDITIONAL_INGREDIENT_WORD = "output.additional.ingredient.word";
     String NAME_WORD = "output.name.word";
