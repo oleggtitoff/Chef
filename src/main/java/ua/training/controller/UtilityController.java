@@ -65,7 +65,8 @@ class UtilityController {
         return inputDoubleNotLessThanSomeValueWithScanner(message, 0);
     }
 
-    private double inputDoubleNotLessThanSomeValueWithScanner(String message, double threshold) {
+    private double inputDoubleNotLessThanSomeValueWithScanner(String message,
+                                                              double threshold) {
         double inputValue = inputDoubleWithScanner(message);
 
         while (inputValue < threshold) {
@@ -76,12 +77,17 @@ class UtilityController {
     }
 
     private double inputDoubleWithScanner(String message) {
+        double inputValue;
+
         view.printBundleLine(message);
         while (!scanner.hasNextDouble()) {
             view.printWrongInputAndBundleLine(message);
             scanner.nextLine();
         }
-        return scanner.nextDouble();
+
+        inputValue = scanner.nextDouble();
+        scanner.nextLine();
+        return inputValue;
     }
 
     boolean getAndCheckUserAnswer(String message, String potentialAnswer,
