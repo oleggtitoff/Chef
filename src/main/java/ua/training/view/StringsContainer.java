@@ -6,12 +6,13 @@ public interface StringsContainer {
     String EQUAL_SIGN = "=";
     String OPEN_CURLY_BRACE = "{";
     String CLOSE_CURLY_BRACE = "}";
-    String VEGETABLE_WORD = "Vegetable";
-    String ADDITIONAL_INGREDIENT_WORD = "Additional Ingredient";
-    String NAME_WORD = "Name";
-    String K_CALORIES_WORD = "Kilocalories";
-    String K_CALORIES_IN_1_KG_WORD = "Kilocalories in 1 kg";
-    String TYPE_WORD = "Type";
+    String VEGETABLE_WORD = "output.vegetable.word";
+    String ADDITIONAL_INGREDIENT_WORD = "output.additional.ingredient.word";
+    String NAME_WORD = "output.name.word";
+    String K_CALORIES_WORD = "output.kcalories.word";
+    String K_CALORIES_IN_1_KG_WORD = "output.kcalories.in1kg.word";
+    String TYPE_WORD = "output.type.word";
+    String SALAD_WORD = "output.salad.word";
 
     String WRONG_INPUT_MESSAGE = "input.wrong.message";
     String INPUT_INGREDIENT_QUESTION = "input.ingredient.question";

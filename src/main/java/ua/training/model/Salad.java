@@ -1,8 +1,12 @@
 package ua.training.model;
 
+import ua.training.view.StringsContainer;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static ua.training.view.View.bundle;
 
 public class Salad {
     private List<Ingredient> ingredients = new ArrayList<>();
@@ -56,6 +60,33 @@ public class Salad {
 
     public void sort() {
         Collections.sort(ingredients);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder resultString = new StringBuilder();
+
+        buildSaladString(resultString);
+        return resultString.toString();
+    }
+
+    private void buildSaladString(StringBuilder resultString) {
+        appendSaladWordAndCurlyBraceToString(resultString);
+        appendAllIngredientsToString(resultString);
+        resultString.append(StringsContainer.CLOSE_CURLY_BRACE);
+    }
+
+    private void appendSaladWordAndCurlyBraceToString(StringBuilder resultString) {
+        resultString.append(bundle.getString(StringsContainer.SALAD_WORD));
+        resultString.append(StringsContainer.SPACE_SIGN);
+        resultString.append(StringsContainer.OPEN_CURLY_BRACE);
+    }
+
+    private void appendAllIngredientsToString(StringBuilder resultString) {
+        for (Ingredient ingredient : ingredients) {
+            resultString.append(ingredient.toString());
+            resultString.append(System.lineSeparator());
+        }
     }
 
 }
