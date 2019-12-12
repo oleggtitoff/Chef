@@ -21,4 +21,13 @@ public class AdditionalIngredientTest {
                 TestConstants.DOUBLES_COMPARISON_DELTA);
     }
 
+    @Test
+    public void testAddMore() {
+        additionalIngredient.addMore(0.020);
+        double mass = additionalIngredient.getMass();
+
+        Assert.assertEquals(0.1, mass,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
+    }
+
 }
