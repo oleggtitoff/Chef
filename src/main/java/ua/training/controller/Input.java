@@ -30,7 +30,7 @@ public enum Input {
         return mass;
     }
 
-    public double getkCaloriesIn1KG() {
+    public double getKCaloriesIn1KG() {
         return kCaloriesIn1KG;
     }
 

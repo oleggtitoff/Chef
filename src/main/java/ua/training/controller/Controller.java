@@ -21,13 +21,13 @@ public class Controller {
         for (int i = 0; i < 4; i++) {
             salad.addVegetable(Input.values()[i].getName(),
                     Input.values()[i].getMass(),
-                    Input.values()[i].getkCaloriesIn1KG());
+                    Input.values()[i].getKCaloriesIn1KG());
         }
 
         for (int i = 4; i < 6; i++) {
             salad.addAdditionalIngredient(Input.values()[i].getName(),
                     Input.values()[i].getMass(),
-                    Input.values()[i].getkCaloriesIn1KG(),
+                    Input.values()[i].getKCaloriesIn1KG(),
                     Input.values()[i].getType());
         }
 
