@@ -31,6 +31,14 @@ public class VegetableTest {
     }
 
     @Test
+    public void testCompareToIfNotEquals() {
+        Vegetable vegetable2 = new Vegetable("Carrot", 0.3, 1000.1);
+        int result = vegetable.compareTo(vegetable2);
+
+        Assert.assertEquals(-1, result);
+    }
+
+    @Test
     public void testCheckIfIsClean() {
         boolean isClean = vegetable.checkIfIsClean();
 
