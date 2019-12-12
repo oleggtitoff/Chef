@@ -30,4 +30,13 @@ public class AdditionalIngredientTest {
                 TestConstants.DOUBLES_COMPARISON_DELTA);
     }
 
+    @Test
+    public void testCompareToIfNotEquals() {
+        AdditionalIngredient additionalIngredient2 = new AdditionalIngredient(
+                "Salt", 0.003, 0, "SPECIES");
+        int result = additionalIngredient.compareTo(additionalIngredient2);
+
+        Assert.assertEquals(1, result);
+    }
+
 }
