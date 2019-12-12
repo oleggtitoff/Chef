@@ -10,7 +10,7 @@ import static ua.training.view.View.bundle;
  * @author Oleh Titov
  * @version 1.0
  */
-class Ingredient implements Comparable<Ingredient> {
+abstract class Ingredient implements Comparable<Ingredient> {
     private String name;
     private double mass;
     private double kCaloriesIn1KG;
