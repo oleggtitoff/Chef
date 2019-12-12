@@ -13,6 +13,15 @@ public class VegetableTest {
     }
 
     @Test
+    public void testCalculateCaloriesInMass() {
+        double caloriesInThisMass
+                = vegetable.calculateCaloriesInMass(0.1, 1000);
+
+        Assert.assertEquals(100.0, caloriesInThisMass,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
+    }
+
+    @Test
     public void testCheckIfIsClean() {
         boolean isClean = vegetable.checkIfIsClean();
 
