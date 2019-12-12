@@ -22,6 +22,15 @@ public class VegetableTest {
     }
 
     @Test
+    public void testAddMore() {
+        vegetable.addMore(0.15);
+        double mass = vegetable.getMass();
+
+        Assert.assertEquals(0.25, mass,
+                TestConstants.DOUBLES_COMPARISON_DELTA);
+    }
+
+    @Test
     public void testCheckIfIsClean() {
         boolean isClean = vegetable.checkIfIsClean();
 
