@@ -39,4 +39,13 @@ public class AdditionalIngredientTest {
         Assert.assertEquals(1, result);
     }
 
+    @Test
+    public void testCompareToIfEquals() {
+        AdditionalIngredient additionalIngredient2 = new AdditionalIngredient(
+                "HomemadeMayonnaise", 0.050, 6000, "SAUCES");
+        int result = additionalIngredient.compareTo(additionalIngredient2);
+
+        Assert.assertEquals(0, result);
+    }
+
 }
